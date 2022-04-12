@@ -26,7 +26,7 @@ app.include_router(vote.router)
 #Path= http://127.0.0.1:8000 
 @app.get("/") 
 def root():
-    return {"message": "Welcome to the movies lib"}
+    return {"message": "HELLO :)"}
 
 
 
