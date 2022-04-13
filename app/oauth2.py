@@ -1,6 +1,5 @@
 #Skapar en acess_token som är giltig i 30 min
 from fastapi import Depends, HTTPException, status
-from telnetlib import STATUS
 from jose import JWTError,jwt
 from datetime import datetime, timedelta
 from .import schemas,database, models
