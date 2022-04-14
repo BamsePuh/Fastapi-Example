@@ -26,7 +26,7 @@ app.include_router(vote.router)
 #Path= http://127.0.0.1:8000 
 @app.get("/") 
 def root():
-    return {"message": "HELLO :)"}
+    return {"This application is built on Python using the FASTAPI framework."}
 
 
 
