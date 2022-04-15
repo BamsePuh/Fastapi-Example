@@ -2,7 +2,7 @@
 from pydantic import BaseSettings
 from dotenv import load_dotenv
 
-my_file = load_dotenv('E:\Fastapi\.env')
+my_file = load_dotenv('E:\Fastapi\Backend\.env')
 
 
 class Settings(BaseSettings):

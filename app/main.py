@@ -1,5 +1,4 @@
-from fastapi import FastAPI, Request
-from fastapi.templating import Jinja2Templates
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .routers import posts,user, auth,vote
 
@@ -9,10 +8,8 @@ from .routers import posts,user, auth,vote
 
 app = FastAPI()
 
-templates = Jinja2Templates(directory="templates")
-
 # ["*"] = all domains
-origins = ["*"]
+origins = ["http://localhost:3000"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -31,17 +28,10 @@ app.include_router(vote.router)
 #@app.get("/") 
 #def root():
 
- #   return ["This application is built on the FASTAPI framework"]
-
-
 @app.get("/")
-def posts(request: Request):
-    """
-    Homepage
-    """
-    return templates.TemplateResponse("home.html",{
-        "request": request
-    })
+def posts():
+
+    return ["Hello"]
 
 
 

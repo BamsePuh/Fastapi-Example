@@ -21,8 +21,9 @@ router = APIRouter(
 #limit = .limit(limit)
 #skip = .offset(skip)
 #%20 är mellanslag i URL
-@router.get ("/",   response_model= list[schemas.PostOut])
-def get_posts(db: Session = Depends(get_db),current_user: int = Depends(oauth2.get_current_user), 
+# current_user: int = Depends(oauth2.get_current_user),
+@router.get ("/", response_model= list[schemas.PostOut])
+def get_posts(db: Session = Depends(get_db), 
 limit: int = 50,skip: int = 0, search: Optional[str] = ""):
 
     #posts=db.query(models.Posts).filter(models.Posts.title.contains(search)).limit(
